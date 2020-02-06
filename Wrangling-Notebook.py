@@ -41,19 +41,35 @@ sb.boxplot(x = movie_data.Sex, y = movie_data.Age)
 movie_data.Age.hist()
 
 
-jobs = movie_data.loc[movie_data.Job == 'educator',:] 
-jobs = jobs.append(movie_data.loc[movie_data.Job == 'student'])
-jobs = jobs.append(movie_data.loc[movie_data.Job == 'engineer'])
-jobs = jobs.append(movie_data.loc[movie_data.Job == 'writer'])
+movie_data[movie_data.Job.isin(['educator', 'student', 'engineer', 'writer'])]
+plt_data = movie_data[movie_data.Job.isin(['educator', 'student', 'engineer', 'writer'])]
+sb.violinplot(x = plt_data.Job, y = plt_data.Age, hue = jobs.Sex)
 
-sb.violinplot(x = jobs.Job, y = jobs.Age, hue = jobs.Sex)
-
-
-subset = movie_data.loc[]
-
-movie_data.Job == 'technician'
 
 
 #######
 ufo_data = pd.read_csv('http://bit.ly/uforeports')
 ufo_data.head()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+df = pd.DataFrame({"X": [1,1,2,1,1], "Y": ["A","D","B","C", "D"]})
+df[(df.X == 1) & df.Y.isin(["A","B","C"])]
+
+
+
+
+
