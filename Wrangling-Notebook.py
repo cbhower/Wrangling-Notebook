@@ -52,3 +52,8 @@ sb.violinplot(x = jobs.Job, y = jobs.Age, hue = jobs.Sex)
 subset = movie_data.loc[]
 
 movie_data.Job == 'technician'
+
+
+#######
+ufo_data = pd.read_csv('http://bit.ly/uforeports')
+ufo_data.head()
